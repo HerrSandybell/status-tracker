@@ -45,7 +45,7 @@ interface Person {
 }
 
 export interface MissingPerson extends Person {
-  // status?: Status;
+  Status?: Status;
   // lastUpdated?: Date;
   // additionalInfo?: string;
   // source?: string;
@@ -69,7 +69,7 @@ export interface MissingPerson extends Person {
   // militaryId?: string;
   [k: string]: string | undefined;
   // reporter?: Reporter;
-  gender?: Gender;
+  Gender?: Gender;
 }
 
 interface Reporter extends Person {
