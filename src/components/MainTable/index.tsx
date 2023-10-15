@@ -13,7 +13,7 @@ import { MissingPerson } from '@/types';
 
 function MainTableContainer() {
   const handleEditPerson = (personId: string) => {
-    console.log(personId)
+    console.log(personId);
   }
 
   return (

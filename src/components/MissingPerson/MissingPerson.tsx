@@ -7,8 +7,11 @@ interface Props {
 }
 
 function MissinPerson({ person }: Props) {
+  console.log(Object.entries(person))
   return (
     <form>
+        <label>First Name</label>
+        <input type="text" value={person["First Name"]}/>
       {person.id}
     </form>
   )
