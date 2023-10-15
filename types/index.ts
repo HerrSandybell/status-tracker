@@ -45,6 +45,7 @@ interface Person {
 }
 
 export interface MissingPerson extends Person {
+  id: string;
   Status?: Status;
   // lastUpdated?: Date;
   // additionalInfo?: string;

@@ -17,6 +17,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/MissingPerson/MissingPerson.js", "pages/sample-data/sample-data.js"],
   "exclude": ["node_modules"]
 }

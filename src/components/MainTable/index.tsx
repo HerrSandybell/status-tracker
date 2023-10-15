@@ -1,5 +1,5 @@
-import MainTable from '@/src/components/MainTable/MainTable';
-import data  from '../../sample-data/sample-data'
+import MainTable from './MainTable';
+import data  from '../../../sample-data/sample-data'
 import { MissingPerson } from '@/types';
 // import { v4 as uuidv4 } from 'uuid';
 
@@ -11,7 +11,7 @@ import { MissingPerson } from '@/types';
 //   })
 // }
 
-function MainTablePage() {
+function MainTableContainer() {
   const handleEditPerson = (personId: string) => {
     console.log(personId)
   }
@@ -24,4 +24,4 @@ function MainTablePage() {
   )
 }
 
-export default MainTablePage;
+export default MainTableContainer;

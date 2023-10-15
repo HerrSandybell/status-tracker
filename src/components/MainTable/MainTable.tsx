@@ -1,25 +1,26 @@
 import { MissingPerson, Status } from "@/types"
-import styles from './main-table.module.css';
+import styles from './MainTable.module.css';
 
 interface Props {
-    missingPersons: MissingPerson[]
+  missingPersons: MissingPerson[],
+  onPersonEdit: (personId: string) => void
 }
 
 const getHeaders: string[] = (objects: MissingPerson[]) => {
-    if (!(objects && objects.length)) {
-      return [];
-    }
-    
-    const keys = new Set<string>();
+  if (!(objects && objects.length)) {
+    return [];
+  }
   
-    objects.forEach(obj => {
-      const objKeys = Object.keys(obj);
-      objKeys.forEach(key => {
-        keys.add(key);
-      })
+  const keys = new Set<string>();
+
+  objects.forEach(obj => {
+    const objKeys = Object.keys(obj);
+    objKeys.forEach(key => {
+      keys.add(key);
     })
-  
-    return Array.from(keys);
+  })
+
+  return Array.from(keys);
 }
 
 const getHighlight = (missingPerson: MissingPerson) => {
@@ -33,7 +34,7 @@ const getHighlight = (missingPerson: MissingPerson) => {
     }
 }
 
-const MainTable = ({ missingPersons } : Props) => {
+const MainTable = ({ missingPersons, onPersonEdit } : Props) => {
   const headers: string[] = getHeaders(missingPersons);
 
   return (    
@@ -50,7 +51,7 @@ const MainTable = ({ missingPersons } : Props) => {
           {missingPersons.map((person, rowIndex) => 
             <tr key={rowIndex} className={getHighlight(person)}>
               <td>
-                <button>
+                <button onClick={() => onPersonEdit(person.id)}>
                   Modify
                 </button>
               </td>
