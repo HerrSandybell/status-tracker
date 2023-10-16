@@ -1,6 +1,8 @@
 import MainTable from './MainTable';
 import data  from '../../../sample-data/sample-data'
 import { MissingPerson } from '@/types';
+import { useRouter } from 'next/router';
+
 // import { v4 as uuidv4 } from 'uuid';
 
 // const mapData = (persons: MissingPerson[]) => {
@@ -12,8 +14,10 @@ import { MissingPerson } from '@/types';
 // }
 
 function MainTableContainer() {
+  const router = useRouter();
+
   const handleEditPerson = (personId: string) => {
-    console.log(personId);
+    router.push('/missing-person/' + personId)
   }
 
   return (
